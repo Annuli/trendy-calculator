@@ -481,7 +481,7 @@ input[type="text"] {
 
 /* The 'AC / ON' button */
 #btn-all-clear-on {
-	background-image: url('images/ac-on-button-cropped-70-percent.jpeg');
+	background-image: url('images/ac-on-button.jpeg');
 	background-repeat: no-repeat;
 	background-position: center;
 	text-align: center;

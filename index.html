@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- To be rendered in Microsoft's Edge browser -->
+
+	<title>Trendy Calculator</title>
+
+	<link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+
+	<!-- Calculator is the container -->
+	<section class="container">
+		
+		<div id="display-panel">
+
+			<!-- Company name, solar panel, calculator model -->
+			<div class="top-display">
+				<p id="company-name">casio</p>
+				<div id="solar-panel">
+					<div class="box"></div>
+					<div class="box"></div>
+					<div class="box"></div>
+					<div class="box"></div>
+				</div>
+
+				<p id="calculator-model">MJ-12VCb</p>
+
+				<div class="digit-information">
+					<p id="digits-number">12</p>
+					<p id="digits-description">digits</p>
+				</div>
+			</div>
+
+			<!-- LCD display -->
+			<div class="bottom-display">
+				<input id="lcd-display" type="text"></input>
+			</div>
+
+			<!-- keypad for the calculator -->
+			<div id="keypad">
+
+				<p id="number-checked-steps">300 steps check</p>
+				<table class = "calculator" >
+					
+					<tr>
+						<td> <input class = "button" id="btn-white-display" type = "button" value = "disp" onclick="displayDigitSeparators()" /></td>	
+						<td> <input class = "button" id="btn-white-auto-review" type = "button" value = "auto review" onclick="noOperations()" /> </td>
+						<td> <input class = "button" id="btn-white-correct" type = "button" value = "correct" onclick="removeLastCharacter()" /> </td>
+						<td> <input class = "button" id="btn-chevron-up" type = "button" onclick="noOperations()" /> </td>
+						<td> <input class = "button" id="btn-chevron-down" type = "button" onclick="noOperations()" /></td>
+					</tr>
+
+					 <tr>
+						<td> <input class = "button" id="btn-square-root" type = "button" onclick="calculateSquareRoot()" /></td>	
+						<td> <input class = "button" id="btn-memory-recall" type = "button" value="mrc" onclick="recallMemory()" /> </td>
+						<td> <input class = "button" id="btn-subtract-from-memory" type = "button" value="m-" onclick="subtractValueFromMemory()" /> </td>
+						<td> <input class = "button" id="btn-add-to-memory" type = "button" value="m+" onclick="addValueToMemory()" /> </td>
+						<td> <input class = "button" id="btn-mark-up" type = "button" value="mu" onclick="noOperations()" /> </td>
+					</tr>
+
+					<tr>
+					  <td> <input class = "button" id="btn-percent-sign" type = "button" onclick = "calculatePercentage()" /> </td>
+						<td> <input class = "button" id="btn-number-7" type = "button" value = "7" onclick = "display('7')" /> </td>
+						<td> <input class = "button" id="btn-number-8" type = "button" value = "8" onclick = "display('8')" /> </td>
+						<td> <input class = "button" id="btn-number-9" type = "button" value = "9" onclick = "display('9')" /> </td>
+						<td> <input class = "button" id="btn-division-sign" type = "button" onclick = "display('/')" /> </td>
+					</tr>
+
+					<tr>																					
+					  <td> <input class = "button" id="btn-clear" type = "button" value="C" onclick = "clearScreen()" /> </td>
+						<td> <input class = "button" id="btn-number-4" type = "button" value = "4" onclick = "display('4')" /> </td>
+						<td> <input class = "button" id="btn-number-5" type = "button" value = "5" onclick = "display('5')" /> </td>
+						<td> <input class = "button" id="btn-number-6" type = "button" value = "6" onclick = "display('6')" /> </td>
+						<td> <input class = "button" id="btn-multiplication-sign" type = "button" onclick = "display('*')" /> </td>
+					</tr>
+
+ 					<tr>
+						<td> <input class = "button" id="btn-all-clear-on" type = "button" onclick="resetMemory_turnOn()" /> </td>
+						<td> <input class = "button" id="btn-number-1" type = "button" value = "1" onclick = "display('1')" /> </td>
+						<td> <input class = "button" id="btn-number-2" type = "button" value = "2" onclick = "display('2')" /> </td>
+						<td> <input class = "button" id="btn-number-3" type = "button" value = "3" onclick = "display('3')" /> </td>
+						<td> <input class = "button" id="btn-subtraction-sign" type = "button" onclick = "display('-')" /> </td>
+					</tr>
+
+					<tr>
+					 	<td> <input class = "button" id="btn-number-0" type = "button" value = "0" onclick = "display('0')" /> </td>
+					 	<td> <input class = "button" id="btn-number-00" type = "button" value = "00" onclick = "display('00')" /> </td>
+						<td> <input class = "button" id="btn-decimal-point" type = "button" value = "." onclick = "display('.')" /> </td>
+
+						<!-- calculate() function evaluate the mathematical expression -->
+						<td> <input class = "button" id="btn-equals-sign" type = "button" value = "=" onclick = "calculate()" /> </td>
+						<td> <input class = "button" id="btn-addition-sign" type = "button" onclick = "display('+')" /> </td>
+					</tr>
+				</table>
+			</div>
+		</div>	
+	</section>
+
+		
+	<script src="index.js"></script>
+
+</body>
+</html>

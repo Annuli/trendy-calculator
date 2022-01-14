@@ -1,0 +1,591 @@
+
+/* Using personal calculator font */
+@font-face {
+    font-family: 'digital-7regular';
+    src: url('calculator-font/digital7-1e1z-webfont.woff2') format('woff2'),
+         url('calculator-font/digital7-1e1z-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* the HTML tag */
+:root {
+	background-image: linear-gradient(to left, #02afaf, #0269af);
+	font-size: 62.5%; /* default font size for most browsers is 16px; 62.5% of 16 is 10px; root font => 10px */
+}
+
+* {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/* The calculator itself */
+.container {
+	background-color: rgb(248,248,255);
+	width: 45rem;
+	height: 53rem;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	max-width: 300px;
+	margin: 5rem auto 0;
+	padding: 2rem;
+	border: 5px solid rgba(0, 0, 0, 0.5);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	box-shadow: -6px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Panel with company name, solar panel, model, number of digits and LCD display */
+#display-panel {
+	display: block;
+	justify-content: center;
+	background-color: #028caf;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	margin-bottom: 1rem;
+	padding: 1rem 1rem;
+	height: 22%; /* 22% of the calculator */
+	width: 97%;
+}
+
+/* Use flex layout for company name, solar panel, model, number of digits and LCD display */
+#top-display {
+	display: inline-flex;
+	justify-content: flex-start;
+}
+
+/* For the company name: 'CASIO' */
+#company-name {
+	float: left;
+	margin-top: 0.5rem;
+	margin-left: 0.5rem;
+	margin-right: 1.2rem;
+	font-size: 1.8rem;
+	font-weight: 600;
+	align-items: center;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+/* The solar panel specs */
+.box {
+	display: inline-block;
+	float: left;
+	background-color: rgba(139, 0, 0, 1.0);
+	width: 3rem;
+	height: 3rem;
+	border: 1px solid black;
+}
+
+/* For the calculator model: 'MJ-12VCb' */
+#calculator-model {
+	float: left;
+	margin-top: 0.85rem;
+	margin-left: 1.2rem;
+	margin-right: 0.85rem;
+	font-size: 0.85rem;
+	color: #fff;
+}
+
+/* Container for the model number and number of digits */
+.digit-information {
+	display: flex;
+	flex-direction: column;
+	padding-left: 0.35rem;
+}
+
+/* For the number of digits available: '12' */
+#digits-number {
+	font-size: 1.8rem;
+	margin-bottom: 0;
+	color: #fff;
+}
+
+/* For the 'digits' declaration */
+#digits-description {
+	align-items: center;
+	font-size: 0.75rem;
+	color: #fff;
+}
+
+/* Container for the LCD screen */
+#bottom-display {
+	display: block;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Container for the table rows and table data */
+.calculator {
+	display: flex;
+	justify-content: center;
+}
+
+/* Data from the user as shown on the LCD screen */
+input[type="text"] {
+	font-family: 'digital-7regular';
+	display: block;
+	text-align: right;
+	background-color: #cee1e5;
+	font-size: 4rem;
+	width: 95%;
+	height: 6rem;
+	margin: 1rem auto;
+	padding-right: 0.5rem;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	color: #000;
+}			
+
+											/*     KEYPAD BUTTONS     */
+
+
+/* Margin for the '300 STEPS CHECK' and the keypad */
+#keypad {
+	margin: 3.5rem auto;
+}
+
+/* For the '300 STEPS CHECK' line */
+#number-checked-steps  {
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	text-align: right;
+}
+
+/* Increase the margin at the bottom of the keys */
+.button {
+	 margin-bottom: 1rem;
+}
+
+/* Change the box shadow when the button is clicked */
+.button:active {
+	 background: white;
+	 -webkit-box-shadow: inset 0px 0px 15px #c1c1c1;
+	 -moz-box-shadow: inset 0px 0px 15px #c1c1c1;
+	 box-shadow: inset 0px 0px 15px #c1c1c1;
+}
+
+
+/* The 'DISP' button on the top row */
+#btn-white-display {
+	text-align: center;
+	text-transform: uppercase;
+	background-color: white;
+	color: rgba(2, 140, 175, 0.7);
+	font-weight: 600;
+	font-size: 2rem;
+	width: 5.5rem;
+	height: 3.5rem;
+	margin-right: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
+
+/* The 'AUTO REVIEW' button (not functional) */
+#btn-white-auto-review {
+	text-align: center;
+	text-transform: uppercase;
+	background-color: white;
+	color: rgba(0, 0, 0, 0.7);
+	font-weight: 600;
+	font-size: 1.15rem;
+	width: 5.5rem;
+	height: 3.5rem;
+	margin-right: 0.25rem;
+	margin-left: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+	white-space: normal; /* Use these to wrap the second word to the next line */
+	word-wrap: break-word;
+}
+
+
+/* The 'CORRECT' button on the top row */
+#btn-white-correct {
+	text-align: center;
+	text-transform: uppercase;
+	background-color: white;
+	color: rgba(0, 0, 0, 0.7);
+	font-weight: bold;
+	font-size: 1.0rem;
+	width: 5.5rem;
+	height: 3.5rem;
+	margin-right: 0.25rem;
+	margin-left: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+/* The chevron-up arrow (not functional) */
+#btn-chevron-up {
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.6);
+	color: white;
+	font-weight: 600;
+	font-size: 2.5rem;
+	width: 5.5rem;
+	height: 3.5rem;
+	margin-right: 0.25rem;
+	margin-left: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+
+/* The chevron-down arrow (not functional) */
+#btn-chevron-down {
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.6);
+	color: white;
+	font-weight: 600;
+	font-size: 2.5rem;
+	width: 5.5rem;
+	height: 3.5rem;
+	margin-left: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+
+/* The square root button */
+#btn-square-root {
+	text-align: center;
+	background-color: white;
+	color: rgba(2, 140, 175, 1);
+	font-weight: bold;
+	font-size: 2rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-right: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
+
+/* The memory-recall button */
+#btn-memory-recall {
+	text-align: center;
+	text-transform: uppercase;
+	background-color: white;
+	color: rgba(2, 140, 175, 0.7);
+	font-weight: 600;
+	font-size: 1.9rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-right: 0.25rem;
+	margin-left: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
+
+/* The 'subtract from memory' button */
+#btn-subtract-from-memory {
+	text-align: center;
+	text-transform: uppercase;
+	background-color: white;
+	color: rgba(2, 140, 175, 0.7);
+	font-weight: 600;
+	font-size: 2.5rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-right: 0.25rem;
+	margin-left: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
+
+/* The 'add to memory' button */
+#btn-add-to-memory {
+	text-align: center;
+	text-transform: uppercase;
+	background-color: white;
+	color: rgba(2, 140, 175, 0.7);
+	font-weight: 600;
+	font-size: 2.5rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-right: 0.25rem;
+	margin-left: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
+
+/* The 'markup' button (not functional) */
+#btn-mark-up {
+	text-align: center;
+	text-transform: uppercase;
+	background-color: white;
+	color: rgba(2, 140, 175, 0.7);
+	font-weight: 600;
+	font-size: 2.5rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-left: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
+
+/* The 'division sign' button */
+#btn-division-sign {
+	text-align: center;
+	background-color: white;
+	color: rgba(2, 140, 175, 0.7);
+	font-size: 4rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-left: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
+
+/* The 'multiplication' button */
+#btn-multiplication-sign {
+	text-align: center;
+	background-color: white;
+	color: rgba(2, 140, 175, 1);
+	font-size: 3rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-left: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
+
+/* The 'percent sign' button */
+#btn-percent-sign {
+	text-align: center;
+	background-color: white;
+	color: rgba(2, 140, 175, 1);
+	font-size: 3.2rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-right: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
+
+/* Button numbers 4-9 */
+#btn-number-4,
+#btn-number-5,
+#btn-number-6,
+#btn-number-7,
+#btn-number-8,
+#btn-number-9 {
+	text-align: center;
+	background-color: #028caf;
+	color: white;
+	font-size: 3.9rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-left: 0.25rem;
+	margin-right: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
+
+/* The 'Clear' button */
+#btn-clear {
+	text-align: center;
+	background-color: rgb(244, 211, 15);
+	color: black;
+	font-size: 3.5rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-right: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
+
+/* The 'subtraction sign' button */
+#btn-subtraction-sign {
+	text-align: center;
+	background-color: white;
+	color: rgba(2, 140, 175, 1);
+	font-size: 4rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-left: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
+
+/* The 'AC / ON' button */
+#btn-all-clear-on {
+	background-image: url('images/ac-on-button-cropped-70-percent.jpeg');
+	background-repeat: no-repeat;
+	background-position: center;
+	text-align: center;
+	color: black;
+	font-size: 3rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-right: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
+
+/* Button numbers 1-3 */
+#btn-number-1,
+#btn-number-2,
+#btn-number-3 {
+	text-align: center;
+	background-color: #028caf;
+	color: white;
+	font-size: 3.5rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-left: 0.25rem;
+	margin-right: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+
+}
+
+/* The 'addition sign' button */
+#btn-addition-sign {
+	text-align: center;
+	background-color: white;
+	color: rgba(2, 140, 175, 1);
+	font-size: 4rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-left: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
+
+/* The 'equals sign' button */
+#btn-equals-sign {
+	text-align: center;
+	background-color: white;
+	color: rgba(2, 140, 175, 1);
+	font-size: 3.5rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-left: 0.25rem;
+	margin-right: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
+
+/* The '0' button */
+#btn-number-0 {
+	text-align: center;
+	background-color: #028caf;
+	color: white;
+	font-size: 3.5rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-right: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
+
+/* The '.' and '00' buttons */
+#btn-decimal-point,
+#btn-number-00 {
+	text-align: center;
+	background-color: #028caf;
+	color: white;
+	font-size: 3.5rem;
+	width: 5.5rem;
+	height: 5rem;
+	margin-left: 0.25rem;
+	margin-right: 0.25rem;
+	border: rgba(0, 0, 0, 0.6) solid 0.3rem;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	outline: none;
+}
